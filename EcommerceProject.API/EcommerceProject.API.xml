@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EcommerceProject.API</name>
+    </assembly>
+    <members>
+        <member name="M:EcommerceProject.API.Controllers.ProductsController.Create(EcommerceProject.API.DTOs.ProductDto)">
+            <summary>
+            If ProductWithCategoryDto is used and CategoryDto(child) of ProductWithCategoryDto has not id, EF adds
+            child AlongSide parent entity
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.CategoryDto">
+            <summary>
+            Use it at Create Endpoints
+            or as representing model
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.CategoryUpDto">
+            <summary>
+            Use it at Update Endpoints
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.CategoryWithProductDto">
+            <summary>
+            Use it at Create Endpoints
+            or as representing model
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.CategoryWithProductUpDto">
+            <summary>
+            Use it in Update Endpoints
+            Notice:if you use ProductDto instead of ProductUpDto below and use direct EF Update method, it would add new child entity in not existance cases
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.CurrencyDto">
+            <summary>
+            Use it at Create Endpoints
+            or as representing model
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.CurrencyUpDto">
+            <summary>
+            Use it at Update Endpoints
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.ProductDto">
+            <summary>
+            Use it at Create Endpoints
+            or as representing model
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.ProductUpDto">
+            <summary>
+            Use it at Update Endpoints
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.ProductWithCategoryDto">
+            <summary>
+            Use it at Create Endpoints
+            or as representing model
+            </summary>
+        </member>
+        <member name="T:EcommerceProject.API.DTOs.ProductWithCategoryUpDto">
+            <summary>
+            Use it in Update Endpoints
+            Notice:if you use CategoryDto instead of CategoryUpDto below and using direct EF Update method, it would add new child entity in not existance cases
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "T:EcommerceProject.API.Filters.NotFoundFilter`2" -->
+        <member name="P:EcommerceProject.API.Filters.NotFoundFilter`2._CheckByParsingDTO">
+            <summary>
+            Enable it to check existance of Entity type with requested id 
+            </summary>
+        </member>
+        <member name="P:EcommerceProject.API.Filters.NotFoundFilter`2._CheckBySearchIdInDTOJson">
+            <summary>
+            Enable it to check existance of Entity type with requested id 
+            </summary>
+        </member>
+        <member name="P:EcommerceProject.API.Filters.NotFoundFilter`2._NameOfIdProperty">
+            <summary>
+            _NameOfIdProperty in request DTO for using with  _CheckBySearchIdInDTOJson
+            Default is:Id
+            </summary>
+        </member>
+    </members>
+</doc>
