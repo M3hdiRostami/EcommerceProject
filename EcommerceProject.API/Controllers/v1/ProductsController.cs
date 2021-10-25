@@ -13,6 +13,7 @@ using EcommerceProject.Service.Services;
 
 namespace EcommerceProject.API.Controllers
 {
+    [Route("api/v{version:apiVersion}/[controller]/[action]")]
 
     public class ProductsController : APIControllerBase
     {
@@ -56,6 +57,7 @@ namespace EcommerceProject.API.Controllers
         /// child AlongSide parent entity
         /// </summary>
         [HttpPost]
+        [ActionName(nameof(Create))]
         [TypeFilter(typeof(NotFoundFilter<Category, CategoryUpDto>), Arguments = new object[] { NotFoundFilterCheckType.BySearchIdInDTOJson, "categoryId" })]
         public async Task<IActionResult> Create(ProductDto productDto)
         {
@@ -64,10 +66,11 @@ namespace EcommerceProject.API.Controllers
             return Created($"{Request.Path}/{newproduct.Id}", _mapper.Map<ProductDto>(newproduct));
         }
 
-
-        [HttpPost(Name=nameof(CreateRage))]
+        
+        [HttpPost]
+        [ActionName(nameof(CreateRage))]
         [TypeFilter(typeof(NotFoundFilter<Category, CategoryUpDto>), Arguments = new object[] { NotFoundFilterCheckType.BySearchIdInDTOJson, "categoryId" })]
-        public async Task<IActionResult> CreateRage(ProductDto[] productDto)
+        public async Task<IActionResult> CreateRage([FromBody] ProductDto[] productDto)
         {
 
             var prods = _mapper.Map<Product[]>(productDto);

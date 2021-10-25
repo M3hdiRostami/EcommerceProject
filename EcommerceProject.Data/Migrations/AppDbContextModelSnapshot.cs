@@ -128,10 +128,6 @@ namespace EcommerceProject.Data.Migrations
                     b.Property<int>("CurrencyId")
                         .HasColumnType("int");
 
-                    b.Property<string>("Serialnumber")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
-
                     b.Property<bool>("IsDeleted")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bit")
@@ -144,6 +140,10 @@ namespace EcommerceProject.Data.Migrations
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("Serialnumber")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<int>("Stock")
                         .HasColumnType("int");
